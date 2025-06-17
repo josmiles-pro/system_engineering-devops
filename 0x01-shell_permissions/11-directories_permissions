@@ -1,7 +1,2 @@
 #!/bin/bash
-<<<<<<< HEAD
-find . -maxdepth 1 -type d -exec chmod a+x {} \+
-
-=======
 find . -mindepth 1 -type d -print0 | xargs -0 chmod 711
->>>>>>> 5d58fd2234e2908eaa4e4a3229db4ecd5a7c233a
