@@ -1,10 +1,3 @@
 #!/bin/bash
-sudo rm -rf dir1 dir2 2>/dev/null
-sudo mkdir -m 0111 dir1 dir2
-sudo chown $(whoami):staff dir1 dir2 2>/dev/null
-sudo chmod -N dir1 dir2 2>/dev/null
-sudo chmod 0111 dir1 dir2
-sudo xattr -c dir1 dir2 2>/dev/null
-sudo chflags nouchg dir1 dir2 2>/dev/null 
-ls -lde dir1 dir2 | awk '{print $1 " " $3 " " $4}'
+find . -mindepth 1 -type d -exec chmod 711 {} \;
 
