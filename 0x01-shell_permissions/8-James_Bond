@@ -1,4 +1,2 @@
 #!/bin/bash
-chmod 000 hello
-chflags nouchg hello 2>/dev/null
 chmod 007 hello
