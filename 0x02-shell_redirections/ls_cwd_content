@@ -1,0 +1,15 @@
+total 88
+drwxr-xr-x  14 josephkamanja  staff  448 Jun 23 10:37 .
+drwxr-xr-x   7 josephkamanja  staff  224 Jun 23 10:22 ..
+-rwxr-xr-x   1 josephkamanja  staff   32 Jun 23 10:23 0-hello_world
+-rwxr-xr-x   1 josephkamanja  staff   28 Jun 23 10:23 1-confused_smiley
+-rwxr-xr-x   1 josephkamanja  staff   28 Jun 23 10:25 2-hellofile
+-rwxr-xr-x   1 josephkamanja  staff   39 Jun 23 10:26 3-twofiles
+-rwxr-xr-x   1 josephkamanja  staff   35 Jun 23 10:27 4-lastlines
+-rwxr-xr-x   1 josephkamanja  staff   35 Jun 23 10:28 5-firstlines
+-rwxr-xr-x   1 josephkamanja  staff   40 Jun 23 10:30 6-third_line
+-rwxr-xr-x   1 josephkamanja  staff   71 Jun 23 10:35 7-file
+-rwxr-xr-x   1 josephkamanja  staff   36 Jun 23 10:36 8-cwd_state
+-rw-r--r--   1 josephkamanja  staff   12 Jun 23 10:35 \*\'"Best School"'\*$?*****:)
+-rw-r--r--   1 josephkamanja  staff   28 Jun 23 10:30 iacta
+-rw-r--r--   1 josephkamanja  staff    0 Jun 23 10:37 ls_cwd_content
