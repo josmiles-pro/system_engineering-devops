@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
-# List files showing only part after first dash
-for file in *; do
-    if [[ $file == *-* ]]; then
+# This script displays the content of the current directory, showing only the part 
+after the first dash
+
+for file in *
+do
+    if [[ "$file" == *-* ]]; then
         echo "${file#*-}"
     else
         echo "$file"
