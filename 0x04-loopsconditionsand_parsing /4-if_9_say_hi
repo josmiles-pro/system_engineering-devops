@@ -1,11 +1,10 @@
-#!/bin/bash
+#!/usr/bin/env bash
+# Display "Best School" with "Hi" on the 9th iteration
 count=1
 while [ $count -le 10 ]; do
+    echo "Best School"
     if [ $count -eq 9 ]; then
-        echo "Best School"
         echo "Hi"
-    else
-        echo "Best School"
     fi
     count=$((count + 1))
 done
