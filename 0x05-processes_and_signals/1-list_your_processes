@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# Displays all running processes for all users in a user-oriented format on macOS
+# Displays all running processes in user-oriented format with full path and full 
+start time
 
-ps ax -o user,pid,%cpu,%mem,vsz,rss,tty,stat,start,time,command
+ps -axo user,lstart,command
 
