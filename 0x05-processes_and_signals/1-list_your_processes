@@ -1,10 +1,5 @@
 #!/usr/bin/env bash
-# Displays just the USER column to match expected output
+# Displays all running processes for all users in a user-oriented format on macOS
 
-ps -ax -o user | awk '
-BEGIN {
-    print "USER"
-}
-NR>1 {
-    print $1
-}'
+ps ax -o user,pid,%cpu,%mem,vsz,rss,tty,stat,start,time,command
+
