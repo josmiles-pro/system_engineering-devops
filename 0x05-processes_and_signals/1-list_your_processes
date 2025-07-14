@@ -1,4 +1,19 @@
 #!/usr/bin/env bash
-# Displays all running processes in hierarchical format (macOS version)
+# Displays processes in exact required format for macOS
 
-ps -ax -o user,pid,%cpu,%mem,vsz,rss,tty,stat,start,time,command
+ps -ax -o user,start,command | awk '
+BEGIN {
+    printf "%-8s %-8s %s\n", "USER", "STARTED", "COMMAND"
+}
+NR>1 {
+    # Extract just the time from start field
+    split($2, timeparts, ":")
+    start_time = sprintf("%02d:%02d:%02d", timeparts[1], timeparts[2], 
+timeparts[3])
+    
+    # Clean up command field
+    cmd = $0
+    sub(/^[^ ]+[ ]+[^ ]+[ ]+/, "", cmd)  # Remove user and start time
+    
+    printf "%-8s %-8s %s\n", $1, start_time, cmd
+}'
