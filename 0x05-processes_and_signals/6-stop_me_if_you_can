@@ -1,0 +1,2 @@
+#!/bin/bash
+pkill -TERM -f "4-to_infinity_and_beyond"
