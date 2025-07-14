@@ -1,6 +1,24 @@
 #!/usr/bin/env bash
-# Displays the PID and process name of bash processes
+# Displays the PID and process name of bash processes without using ps
 
-# This version will always show at least the current shell
-echo "$$ bash"  # This shows the current shell's PID
-ps -axo pid,comm | grep bash | grep -v grep | awk '{print $1, $2}'
+# Method that works on macOS without using ps
+{
+    # Try pgrep first (preferred method)
+    if command -v pgrep >/dev/null; then
+        pgrep -l bash | awk '{print $1, $2}' | grep -E 'bash$'
+    else
+        # Fallback method using /proc (Linux) or launchctl (macOS)
+        if [ -d /proc ]; then
+            # Linux procfs method
+            find /proc -maxdepth 1 -type d -name '[0-9]*' -exec sh -c \
+            'cat "$0"/comm 2>/dev/null | grep -q bash && echo "$(basename "$0") 
+bash"' {} \;
+        else
+            # macOS launchctl method
+            launchctl list | awk '/bash/{print $1, "bash"}'
+        fi
+    fi
+    
+    # Ensure at least current shell is shown
+    echo "$$ bash"
+} | sort -u
