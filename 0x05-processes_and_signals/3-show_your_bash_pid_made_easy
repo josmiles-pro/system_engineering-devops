@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 # Displays the PID and process name of bash processes
 
-# macOS compatible version that finds all bash instances
-for pid in $(ps -axo pid,command | grep bash | grep -v grep | awk '{print $1}'); do
-    echo "$pid bash"
-done
+# This version will always show at least the current shell
+echo "$$ bash"  # This shows the current shell's PID
+ps -axo pid,comm | grep bash | grep -v grep | awk '{print $1, $2}'
