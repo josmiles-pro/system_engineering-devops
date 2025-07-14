@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Displays the PID and process name of bash processes
+
+# macOS compatible version that finds all bash instances
+for pid in $(ps -axo pid,command | grep bash | grep -v grep | awk '{print $1}'); do
+    echo "$pid bash"
+done
