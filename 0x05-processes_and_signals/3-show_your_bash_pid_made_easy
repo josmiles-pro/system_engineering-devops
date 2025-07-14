@@ -1,3 +1,0 @@
-#!/bin/bash
-# Find all bash processes excluding the current script and grep
-ps -e -o pid,comm | grep -w 'bash' | grep -v -E 'grep|show_your_bash'
