@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
-# Displays all running processes in user-oriented format with full path and full 
-start time
+# Lists all users with currently running processes
 
-ps -axo user,lstart,command
+ps -eo user= | sort | uniq
 
