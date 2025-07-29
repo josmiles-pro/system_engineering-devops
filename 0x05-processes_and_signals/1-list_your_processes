@@ -1,11 +1,4 @@
 #!/usr/bin/env bash
 # Displays a list of currently running processes with hierarchy for all users
 
-# Check if we're on macOS or Linux
-if [[ "$(uname)" == "Darwin" ]]; then
-    # macOS version
-    ps -A -o user,pid,%cpu,%mem,vsz,rss,tty,stat,start,time,command
-else
-    # Linux version
-    ps -e -f --forest
-fi
+ps -A -o user,pid,%cpu,%mem,vsz,rss,tty,stat,start,time,command
